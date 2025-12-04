@@ -1,0 +1,16 @@
+<layer>
+  <name>investor_target_pairs</name>
+  <id>LayerInfoImpl-1417d99f:19ad920b2b2:-7fdb</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--6a77b788:19ab5d15586:-8000</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-1417d99f:19ad920b2b2:-7fdc</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2025-12-01 10:14:05.281 UTC</dateCreated>
+</layer>

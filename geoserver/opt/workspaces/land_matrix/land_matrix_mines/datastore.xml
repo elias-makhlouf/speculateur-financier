@@ -1,0 +1,21 @@
+<dataStore>
+  <id>DataStoreInfoImpl-1417d99f:19ad920b2b2:-7fe7</id>
+  <name>land_matrix_mines</name>
+  <type>GeoPackage</type>
+  <enabled>true</enabled>
+  <workspace>
+    <id>WorkspaceInfoImpl-1417d99f:19ad920b2b2:-7fe9</id>
+  </workspace>
+  <connectionParameters>
+    <entry key="fetch size">1000</entry>
+    <entry key="Expose primary keys">false</entry>
+    <entry key="Batch insert size">1</entry>
+    <entry key="database">file:data/land_matrix_mines.gpkg</entry>
+    <entry key="read_only">false</entry>
+    <entry key="dbtype">geopkg</entry>
+    <entry key="namespace">land_matrix</entry>
+  </connectionParameters>
+  <__default>false</__default>
+  <dateCreated>2025-12-01 10:03:56.696 UTC</dateCreated>
+  <disableOnConnFailure>false</disableOnConnFailure>
+</dataStore>

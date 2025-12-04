@@ -1,0 +1,17 @@
+<layer>
+  <name>deals_by_country</name>
+  <id>LayerInfoImpl-1417d99f:19ad920b2b2:-7fe2</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-1417d99f:19ad920b2b2:-7fd5</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-1417d99f:19ad920b2b2:-7fe3</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2025-12-01 10:13:15.36 UTC</dateCreated>
+  <dateModified>2025-12-01 10:33:00.398 UTC</dateModified>
+</layer>
