@@ -15,3 +15,5 @@ const map = new Map({
     zoom: 2
   })
 });
+
+console.log("Bonjour");
