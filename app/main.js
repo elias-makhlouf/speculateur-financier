@@ -15,14 +15,14 @@ const couche_osm = new TileLayer({
 });
 
 // --- URL WMS de ton GeoServer ---
-const wmsUrl = 'http://localhost:8080/geoserver/land_matrix/wms';
+const wmsUrl = 'http://localhost:8080/geoserver/land_matrix_agri/wms';
 const owsUrl = 'http://localhost:8080/geoserver/land_matrix/ows';
 
 
 // --- Couche 1 : deals ---
 const deals_source = new ImageWMS({
   url: wmsUrl,
-  params: { 'LAYERS': 'land_matrix:deals2' },
+  params: { 'LAYERS': 'land_matrix_agri:deals' },
   serverType: 'geoserver',
 });
 const deals_layer = new ImageLayer({
@@ -32,7 +32,7 @@ const deals_layer = new ImageLayer({
 // --- Couche 2 : deals_by_country ---
 const deals_by_country_source = new ImageWMS({
   url: wmsUrl,
-  params: { 'LAYERS': 'land_matrix:deals_by_country2' },
+  params: { 'LAYERS': 'land_matrix:deals_by_country' },
   serverType: 'geoserver',
 });
 const deals_by_country_layer = new ImageLayer({
@@ -64,16 +64,16 @@ function getStyleCentroid(feature) {
 }
 const sourceCentroidWFS = new VectorSource({
   format: new GeoJSON(),
-  url: owsUrl+'?service=WFS&version=1.0.0&request=GetFeature&typeName=land_matrix%3Adeals_by_country_centroid2&maxFeatures=50&outputFormat=application%2Fjson'
+  url: owsUrl+'?service=WFS&version=1.0.0&request=GetFeature&typeName=land_matrix%3Adeals_by_country_centroid&maxFeatures=50&outputFormat=application%2Fjson'
 });
 
-// const styleCentroid = new Style({
-//   image: new Circle({
-//     radius: 50,
-//     fill: new Fill({color: 'rgba(255, 150, 0, 0.3)' }),
-//     stroke: new Stroke({ color: 'orange', width: 2 }),
-//   }),
-// });
+const styleCentroid = new Style({
+  image: new Circle({
+    radius: 50,
+    fill: new Fill({color: 'rgba(255, 150, 0, 0.3)' }),
+    stroke: new Stroke({ color: 'orange', width: 2 }),
+  }),
+});
 
 const layerCentroid = new VectorLayer({
   source: sourceCentroidWFS,
@@ -95,7 +95,7 @@ function getStyleCentroidSurface(feature) {
 }
 const sourceCentroidWFS_Surface = new VectorSource({
   format: new GeoJSON(),
-  url: owsUrl+'?service=WFS&version=1.0.0&request=GetFeature&typeName=land_matrix%3Adeals_by_country_centroid2&maxFeatures=50&outputFormat=application%2Fjson'
+  url: owsUrl+'?service=WFS&version=1.0.0&request=GetFeature&typeName=land_matrix%3Adeals_by_country_centroid&maxFeatures=50&outputFormat=application%2Fjson'
 });
 const layerCentroidSurface = new VectorLayer({
   source: sourceCentroidWFS_Surface,
@@ -107,9 +107,9 @@ const map = new Map({
   target: 'map',
   layers: [ 
     couche_osm,
-    //deals_layer,
-    //deals_by_country_layer,
-    // deals_centroid_layer,
+    deals_layer,
+     deals_by_country_layer,
+    deals_centroid_layer,
     layerCentroidSurface,
     layerCentroid,
   ],

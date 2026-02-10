@@ -1,6 +1,6 @@
 services:
   geoserver:
-    container_name: geonum_geoserver
+    container_name: speculateur_financier_geoserver
     image: docker.osgeo.org/geoserver:2.26.0
     environment:
       - RUN_UNPRIVILEGED=true
@@ -13,7 +13,7 @@ services:
       - ./geoserver/opt:/opt/geoserver_data
 
   web:
-    container_name: geonum_web
+    container_name: speculateur_financier_web
     image: caddy:latest
     ports:
       - "80:80"

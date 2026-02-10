@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>AgriInvest Analytics – Analyse OpenLayers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Feuille de style principale -->
+    <link rel="stylesheet" href="./openlayers.css">
+</head>
+
+<body>
+
+    <!-- ===================== -->
+    <!-- En-tête -->
+    <!-- ===================== -->
+    <header>
+        <h1>Analyse des investissements agricoles mondiaux</h1>
+        <p>
+            Cette carte propose une lecture macro-économique des investissements agricoles,
+            afin d’identifier les pays concentrant les plus grandes surfaces investies
+            et les dynamiques récentes du marché.
+        </p>
+    </header>
+
+    <!-- ===================== -->
+    <!-- Contenu principal -->
+    <!-- ===================== -->
+    <main>
+
+        <h2>Plateforme d’analyse cartographique</h2>
+
+        <div class="map-layout">
+
+            <!-- Panneau de contrôle -->
+            <aside id="controls">
+
+                <section>
+                    <h3>Fonds de carte</h3>
+                    <label>
+                        <input type="radio" name="basemap" id="baseOSM" checked>
+                        OpenStreetMap
+                    </label>
+                    <label>
+                        <input type="radio" name="basemap" id="baseESRI">
+                        Satellite (ESRI)
+                    </label>
+                </section>
+
+                <section>
+                    <h3>Couches</h3>
+                    <label>
+                        <input type="checkbox">
+                        Deals par pays (WMS)
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Deals individuels (WFS)
+                    </label>
+                </section>
+
+                <section>
+                    <h3>Filtrer par année : <span id="yearValue">2015</span></h3>
+                    <input
+                        type="range"
+                        id="yearSlider"
+                        min="2015"
+                        max="2023"
+                        step="1"
+                        value="2015"
+                    >
+                </section>
+
+                <section id="legend">
+                    <h3>Légende</h3>
+                    <p>
+                        <span class="legend-circle"></span>
+                        Deal agricole (taille proportionnelle à la surface)
+                    </p>
+                    <p>
+                        Polygones : total des surfaces investies par pays
+                    </p>
+                </section>
+
+            </aside>
+
+            <!-- Carte -->
+            <div id="map"></div>
+
+        </div>
+
+    </main>
+
+    <!-- ===================== -->
+    <!-- Script OpenLayers -->
+    <!-- ===================== -->
+    <script type="module" src="./openlayers.js"></script>
+
+</body>
+</html>

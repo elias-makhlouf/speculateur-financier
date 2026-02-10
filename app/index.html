@@ -1,13 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Using OpenLayers with Vite</title>
-  </head>
-  <body>
-    <div id="map"></div>
-    <script type="module" src="./main.js"></script>
-  </body>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>AreaINVEST Analytics</title>
+    <link rel="stylesheet" href="style_index.css">
+</head>
+<body>
+    <header>
+        <h1>AreaINVEST Analytics</h1>
+        <p class="team">Équipe : Fanny Fortin & Elias Makhlouf</p>
+    </header>
+
+    <main>
+        <section class="about">
+            <h2>Notre agence</h2>
+            <p>
+                AreaINVEST Analytics est une agence spécialisée dans l’analyse des investissements agricoles à l’échelle mondiale. 
+                Nous combinons expertise financière, analyse géospatiale et veille stratégique pour identifier les opportunités les plus prometteuses 
+                dans le secteur agricole. Notre objectif est de fournir à nos clients des recommandations concrètes pour optimiser leurs investissements, 
+                qu’il s’agisse de cultures stratégiques, de zones à forte croissance ou de partenariats émergents.
+            </p>
+            <p>
+                Depuis notre création, nous avons observé l’évolution rapide des investissements dans des cultures comme le soja, le maïs, l’huile de palme ou le café, 
+                en particulier en Amérique Latine, en Afrique et en Asie. Grâce à nos analyses, nos clients peuvent anticiper les tendances du marché et saisir des opportunités avant la concurrence.
+            </p>
+        </section>
+
+        <section class="dataset">
+            <h2>Notre approche</h2>
+            <p>
+                Pour cette analyse, nous nous appuyons sur le jeu de données <strong>Land Matrix Agri</strong>, qui recense les acquisitions et investissements agricoles à travers le monde. 
+                Nous mettons en avant les zones les plus actives, les types de cultures les plus recherchés, et l’évolution des projets dans le temps. 
+                Cette approche nous permet d’identifier des hotspots de croissance et de visualiser les tendances régionales et globales.
+            </p>
+         </section>
+
+        <section class="navigation">
+            <h2>Explorer nos cartes interactives</h2>
+            <p>Choisissez la plateforme de visualisation pour découvrir les tendances et opportunités :</p>
+            <div class="buttons">
+                <a href="openlayers.html" class="btn">Carte OpenLayers</a>
+                <a href="leaflet.html" class="btn">Carte Leaflet</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 AreaINVEST Analytics. Tous droits réservés.</p>
+    </footer>
+</body>
 </html>
