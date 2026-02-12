@@ -1,4 +1,4 @@
-# Speculateur Financier
+# AreaINVEST Analytics
 
 **Description :**
 Speculateur Financier est une application web permettant de visualiser différentes cartes interactives et données financières. L’application utilise GeoServer pour gérer et servir les données géospatiales et est entièrement packagée dans des conteneurs Docker pour un déploiement facile.
