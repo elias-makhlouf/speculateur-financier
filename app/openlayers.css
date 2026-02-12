@@ -1,7 +1,4 @@
-/* ============================= */
-/* RESET & BASE                  */
-/* ============================= */
-
+/********** BASE **********/
 html, body {
     margin: 0;
     padding: 0;
@@ -10,42 +7,51 @@ html, body {
     color: #2c3e50;
 }
 
-h1, h2, h3, h4 {
-    margin: 0;
-    font-weight: 600;
-}
+h1, h2, h3, h4 { margin: 0; font-weight: 600; }
+p { line-height: 1.6; }
 
-p {
-    line-height: 1.6;
-}
-
-/* ============================= */
-/* HEADER                        */
-/* ============================= */
-
+/********** HEADER **********/
 header {
     background: linear-gradient(135deg, #2a9d8f, #21867a);
     color: white;
     padding: 40px 20px;
     text-align: center;
+    position: relative;
 }
 
-header h1 {
-    font-size: 2.4em;
-    margin-bottom: 15px;
+header h1 { font-size: 2.4em; margin-bottom: 15px; }
+
+#backToMenu {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    padding: 8px 12px;
+    font-size: 0.85em;
+    color: #264653;
+    background-color: rgba(248, 249, 251, 0.9);
+    border: 1px solid #e3e6ea;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
-header p {
-    max-width: 900px;
-    margin: 0 auto;
-    font-size: 1.05em;
-    opacity: 0.95;
+#backToMenu:hover { background-color: #e76f51; color: white; }
+
+/********** INTRODUCTION **********/
+.map-intro {
+    background: #fdfdfd;
+    padding: 20px 25px;
+    border-radius: 10px;
+    margin: 20px;
+    text-align: justify;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-/* ============================= */
-/* MAIN CONTAINER                */
-/* ============================= */
+.map-intro p {
+    font-size: 1.1em;
+    color: #264653;
+}
 
+/********** MAIN **********/
 main {
     max-width: 1400px;
     margin: 40px auto;
@@ -55,71 +61,29 @@ main {
     box-shadow: 0 8px 30px rgba(0,0,0,0.06);
 }
 
-main h2 {
-    margin-bottom: 25px;
-    color: #264653;
-}
+main h2 { margin-bottom: 25px; color: #264653; }
 
-/* ============================= */
-/* LAYOUT                        */
-/* ============================= */
+/********** LAYOUT **********/
+.map-layout { display: flex; gap: 25px; align-items: flex-start; }
 
-.map-layout {
-    display: flex;
-    gap: 25px;
-    align-items: flex-start;
-}
-
-/* ============================= */
-/* CONTROLS PANEL                */
-/* ============================= */
-
+/********** CONTROLS PANEL **********/
 #controls {
     width: 240px;
     background: #f8f9fb;
     padding: 20px;
     border-radius: 10px;
     border: 1px solid #e3e6ea;
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.5);
 }
 
-#controls section {
-    margin-bottom: 30px;
-}
-
-#controls h3 {
-    font-size: 1em;
-    margin-bottom: 12px;
-    color: #264653;
-}
-
-#controls label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 0.9em;
-    cursor: pointer;
-}
-
+#controls section { margin-bottom: 30px; }
+#controls h3 {font-size: 1em; margin-bottom: 12px; color: #264653;}
+#controls label { display: block; margin-bottom: 8px; font-size: 0.9em; cursor: pointer;}
 #controls input[type="radio"],
-#controls input[type="checkbox"] {
-    margin-right: 8px;
-}
+#controls input[type="checkbox"] { margin-right: 8px; }
 
-/* ============================= */
-/* SLIDER                        */
-/* ============================= */
-
-.slider-container {
-    display: flex;
-    align-items: center;
-    gap: 8px; /* espace entre le slider et le bouton */
-    margin-top: 8px;
-}
-
-#yearSlider {
-    flex: 1; /* le slider prend toute la largeur restante */
-}
-
+/********** SLIDER **********/
+.slider-container { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+#yearSlider { flex: 1; }
 #resetYear {
     padding: 4px 10px;
     font-size: 1em;
@@ -127,140 +91,21 @@ main h2 {
     border: 1px solid #e3e6ea;
     border-radius: 6px;
     background: #f8f9fb;
-    transition: background 0.2s ease;
 }
 
-#resetYear:hover {
-    background: #e76f51;
-    color: white;
-    border-color: #e76f51;
-}
-#yearValue {
-    font-weight: 600;
-    color: #e76f51;
-    font-size: 14px;
-}
+#resetYear:hover { background: #e76f51; color: white; }
+#yearValue { font-weight: 600; color: #e76f51; font-size: 14px; }
 
-/* ============================= */
-/* MAP                           */
-/* ============================= */
-
-#map {
-    flex: 1;
-    height: 600px;
-    border-radius: 12px;
-    border: 1px solid #e0e0e0;
-    position: relative; 
-    overflow: hidden;
-}
-
-
-
-/* ============================= */
-/* DYNAMIC CIRCLE                */
-/* ============================= */
-
-.legend-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-top: 6px;
-}
-
-.circle {
-    background-color: rgba(231, 111, 81, 0.6);
-    border: 1px solid #e76f51;
-    border-radius: 50%;
-    transition: width 0.2s ease, height 0.2s ease;
-}
-
-/* ============================= */
-/* ATTRIBUTES PANEL              */
-/* ============================= */
-
-#attributesContent {
-    max-height: 250px;
-    overflow-y: auto;
-}
-
-.deal-card {
-    background: white;
-    border-left: 4px solid #e76f51;
-    padding: 10px 12px;
-    margin-bottom: 10px;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    font-size: 0.85em;
-}
-
-.deal-card strong {
-    color: #264653;
-}
-
-/* ============================= */
-/* LEGEND (BOTTOM RIGHT)         */
-/* ============================= */
-
-
-
-#legend h3 {
-    font-size: 0.95em;
-    margin-bottom: 8px;
-    color: #264653;
-}
-
-#legend h4 {
-    font-size: 0.85em;
-    margin: 10px 0 6px 0;
-    color: #444;
-}
-
-#legend span {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.8em;
-}
-
-#legend {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background: white;
-    padding: 14px 16px;
-    z-index: 1000;
-    border-radius: 10px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    font-size: 0.85em;
-    backdrop-filter: blur(4px);
-    max-width: 230px;
-    transition: all 0.2s ease;
-}
-
-#continentChart {
-    position: absolute;
-    bottom: 20px; /* juste au-dessus de la légende (legend bottom:20px + hauteur approx 150px) */
-    right: 220px; 
-    background: white;
-    padding: 12px;
-    border-radius: 10px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    z-index: 1000;
-    backdrop-filter: blur(4px);
-}
-
-/* ============================= */
-/* BOUTONS CONTINENT             */
-/* ============================= */
+/********** BUTTONS **********/
 .continent-buttons {
     display: flex;
-    flex-wrap: wrap;       /* Les boutons passent à la ligne si besoin */
+    flex-wrap: wrap;
     gap: 8px;
     margin-top: 8px;
 }
 
 .continent-buttons button {
-    flex: 1 1 calc(50% - 8px); /* deux boutons par ligne max */
+    flex: 1 1 calc(50% - 8px);
     padding: 8px 12px;
     font-size: 0.85em;
     font-weight: 600;
@@ -269,71 +114,79 @@ main h2 {
     border: 1px solid #e3e6ea;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.2s ease;
     text-align: center;
 }
 
-.continent-buttons button:hover {
-    background-color: #e76f51;
-    color: white;
-    border-color: #e76f51;
-}
-
+.continent-buttons button:hover,
 .continent-buttons button.active {
     background-color: #e76f51;
     color: white;
     border-color: #e76f51;
 }
 
-
-/* ============================= */
-/* BOUTON RETOUR AU MENU         */
-/* ============================= */
-/* Bouton retour au menu flottant en haut à gauche */
-#backToMenu {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 1100; /* au-dessus de la carte et du panneau de contrôle */
-    padding: 8px 12px;
+/********** ATTRIBUTES PANEL **********/
+#attributesContent { max-height: 250px; overflow-y: auto; }
+.deal-card {
+    background: white;
+    border-left: 4px solid #e76f51;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border-radius: 6px;
     font-size: 0.85em;
-    font-weight: 600;
-    color: #264653;
-    background-color: rgba(248, 249, 251, 0.9); /* semi-transparent */
-    border: 1px solid #e3e6ea;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: all 0.2s ease;
 }
 
-#backToMenu:hover {
-    background-color: #e76f51;
-    color: white;
-    border-color: #e76f51;
+.deal-card strong { color: #264653; }
+
+/********** MAP **********/
+#map {
+    flex: 1;
+    height: 700px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    position: relative; 
+    overflow: hidden;
 }
 
-/* Bouton 💡 flottant */
+/********** LEGEND & CHART **********/
+#legend, #chartContainer {
+    position: absolute;
+    bottom: 20px;
+    background: white;
+    padding: 12px 16px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    z-index: 1000;
+    font-size: 0.85em;
+}
+
+#legend { right: 300px; max-width: 200px; }
+#chartContainer { right: 20px; }
+#legend h3,#legend h4, #chartContainer h3 { margin: 5px 0 5px 0; font-size: 14px; color: #264653; }
+
+/********** DYNAMIC CIRCLE **********/
+.legend-item { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
+.circle { background-color: rgba(231, 111, 81, 0.6); border: 1px solid #e76f51; border-radius: 50%;}
+#dynamicLabel {
+    white-space: nowrap;    /* empêche le texte de passer sous le cercle */
+}
+
+/********** TIP PANEL **********/
 #tipButton {
     position: absolute;
     top: 20px;
     right: 20px;
-    z-index: 1100;
     font-size: 1.3em;
     padding: 6px 10px;
-    border-radius: 10%;
     background-color: rgba(248, 249, 251, 0.9);
     border: 1px solid #e3e6ea;
+    border-radius: 8px;
     cursor: pointer;
+     z-index: 1100;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: all 0.2s ease;
 }
 
-#tipButton:hover {
-    background-color: #f1c40f;
-}
+#tipButton:hover { background-color: #f1c40f; }
 
-/* Panel conseil */
 #tipPanel {
     position: fixed;
     top: 60px;
@@ -345,21 +198,16 @@ main h2 {
     border-radius: 10px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.15);
     padding: 12px 14px;
-    z-index: 1100;
+    z-index: 1200;
     overflow-y: auto;
-    display: none; /* masqué par défaut */
+    pointer-events: auto;
+    display: none;
     font-size: 0.85em;
     line-height: 1.4em;
 }
 
-#tipContent h4 {
-    margin-top: 0;
-    margin-bottom: 8px;
-    font-size: 1em;
-    color: #264653;
-}
+#tipContent h4 { margin: 0 0 8px 0; font-size: 1em; color: #264653; }
 
-/* Bouton fermer */
 #closeTip {
     position: absolute;
     top: 6px;
@@ -371,3 +219,6 @@ main h2 {
     color: #e76f51;
 }
 
+/********** FOOTER **********/
+footer {background:#264653; color:white; text-align:center; padding:25px 20px; font-size:0.95em;}
+footer p {margin:0; opacity:0.9;color: white;}

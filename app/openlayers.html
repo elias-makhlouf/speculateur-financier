@@ -2,39 +2,42 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>AgriInvest Analytics – Analyse OpenLayers</title>
+    <title>AgriTrendMap</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Feuille de style principale -->
+    <link rel="icon" type="image/png" href="/img/icon.png">
     <link rel="stylesheet" href="./openlayers.css">
 </head>
 
 <body>
     <header>
-        <button id="backToMenu" title="Retour au menu">⬅ Menu</button>
-        <h1>Analyse des investissements agricoles mondiaux</h1>
-        <p>
-            Cette carte propose une lecture macro-économique des investissements agricoles,
-            afin d’identifier les pays concentrant les plus grandes surfaces investies
-            et les dynamiques récentes du marché.
-        </p>
+        <button id="backToMenu" title="Retour au menu">⬅ Accueil</button>
+        <h1>AgriTrendMap</h1>
     </header>  
-    <main>
+
+    <!-- Introduction AgriTrendMap -->
+    <section class="map-intro">
+        <p><strong>AgriTrendMap</strong> est un outil d’analyse géospatiale dédié aux investissements fonciers agricoles mondiaux. Il permet d’identifier les pays concentrant les plus grandes surfaces totales engagées selon le temps.
+        <p>Chaque opération est représentée par un cercle dont la taille est proportionnelle à la surface acquise, offrant une lecture immédiate de l’ampleur réelle des investissements. Un graphique cumulé par pays complète l’analyse en quantifiant précisément les hectares investis selon les filtres sélectionnés. Les données ont été trouvées sur la <a href="https://www.fao.org/faostat/en/#data/CISP" target="_blank" class="data-source">Land Matrix</a></p>
+        <p>Pensé comme un outil de lecture macro, AgriTrendMap met en évidence la concentration géographique des investissements et les dynamiques territoriales à l’échelle mondiale, aidant à prioriser les zones stratégiques pour un portefeuille d’investissement foncier optimisé.</p>
+    </section>
+
+
+<main>
         <div class="map"></div>
             <div class="map-layout">
 
             <!-- Panneau de contrôle -->
             <aside id="controls">
                 <section>
-                    <h3>Fonds de carte</h3>
+                    <h3>Choisissez votre fond de carte</h3>
                     <label><input type="radio" name="basemap" id="baseOSM" checked>OpenStreetMap</label>
                     <label><input type="radio" name="basemap" id="baseESRI">Satellite (ESRI)</label>
                 </section>
 
                 <section>
-                    <h3>Couches</h3>
-                    <label><input type="checkbox" id="toggleWMS" checked>Deals par pays (WMS)</label>
-                    <label><input type="checkbox" id="toggleWFS" checked>Deals individuels (WFS)</label>
+                    <h3>Choisissez les couches à afficher</h3>
+                    <label><input type="checkbox" id="toggleWMS" checked> Pays impliqués dans un deal  </label>
+                    <label><input type="checkbox" id="toggleWFS" checked>Opréations agricoles</label>
                 </section>
 
                 <section>
@@ -57,21 +60,25 @@
                 </section>
 
                 <section id="attributes">
-                    <h3>Deals sélectionnés</h3>
+                    <h3>Opérations sélectionnées</h3>
                     <div id="attributesContent"><p>Sélectionnez un deal sur la carte</p></div>
                 </section>
             </aside>
 
             <!-- Carte -->
             <div id="map">
-                <!-- Graphique overlay -->              
-                <canvas id="continentChart" width="230" height="150"></canvas>
-                
+
+                <!-- Graphique en barre -->
+                <section id="chartContainer">
+                    <h3>Total d'hectares investis</h3>
+                    <canvas id="continentChart" width="230" height="150"></canvas>
+                </section>
+
                 <!-- Légende DANS la carte -->
                 <section id="legend">
                     <h3>Légende</h3>
-                    <span><img id="legendWMS" alt="Légende WMS">Surfaces investies par pays</span>
-                    <h4 id="dynamicCircleTitle">Deals agricoles (surface)</h4>
+                    <span><img id="legendWMS" alt="Légende WMS"> Pays avec opération</span>
+                    <h4 id="dynamicCircleTitle">Surface des opérations agricoles</h4>
                     <div class="legend-item">
                         <div id="dynamicCircle" class="circle"></div>
                         <span id="dynamicLabel">–</span>
@@ -90,19 +97,18 @@
                     <button id="closeTip">✖</button>
                 </div>
 
-
-
-
             </div>
 
+        </main>
 
-    </main>
-
-    <!-- ===================== -->
     <!-- Script OpenLayers -->
-    <!-- ===================== -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="./openlayers.js"></script>
 
 </body>
+
+<footer>
+        <p>&copy; 2026 AreaINVEST Analytics. Tous droits réservés.</p>
+</footer>
+
 </html>

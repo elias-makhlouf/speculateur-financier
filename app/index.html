@@ -4,46 +4,82 @@
     <meta charset="UTF-8">
     <title>AreaINVEST Analytics</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/png" href="/img/icon.png">
+
 </head>
 <body>
     <header>
         <h1>AreaINVEST Analytics</h1>
-        <p class="team">Équipe : Fanny Fortin & Elias Makhlouf</p>
+        <p class="team">Par Fanny Fortin & Elias Makhlouf</p>
     </header>
 
-    <main>
-        <section class="about">
-            <h2>Notre agence</h2>
-            <p>
-                AreaINVEST Analytics est une agence spécialisée dans l’analyse des investissements agricoles à l’échelle mondiale. 
-                Nous combinons expertise financière, analyse géospatiale et veille stratégique pour identifier les opportunités les plus prometteuses 
-                dans le secteur agricole. Notre objectif est de fournir à nos clients des recommandations concrètes pour optimiser leurs investissements, 
-                qu’il s’agisse de cultures stratégiques, de zones à forte croissance ou de partenariats émergents.
-            </p>
-            <p>
-                Depuis notre création, nous avons observé l’évolution rapide des investissements dans des cultures comme le soja, le maïs, l’huile de palme ou le café, 
-                en particulier en Amérique Latine, en Afrique et en Asie. Grâce à nos analyses, nos clients peuvent anticiper les tendances du marché et saisir des opportunités avant la concurrence.
-            </p>
-        </section>
+<main>
 
-        <section class="dataset">
-            <h2>Notre approche</h2>
-            <p>
-                Pour cette analyse, nous nous appuyons sur le jeu de données <strong>Land Matrix Agri</strong>, qui recense les acquisitions et investissements agricoles à travers le monde. 
-                Nous mettons en avant les zones les plus actives, les types de cultures les plus recherchés, et l’évolution des projets dans le temps. 
-                Cette approche nous permet d’identifier des hotspots de croissance et de visualiser les tendances régionales et globales.
-            </p>
-         </section>
+    <!-- Introduction -->
+    <section class="intro">
+        <h2>Investissez dans le futur de l’agriculture mondiale</h2>
+        <p>Découvrez les tendances, les hotspots et les opportunités d’investissement par région.</p>
+        <a href="#maps" class="btn">Voir les cartes interactives</a>
+    </section>
 
-        <section class="navigation">
-            <h2>Explorer nos cartes interactives</h2>
-            <p>Choisissez la plateforme de visualisation pour découvrir les tendances et opportunités :</p>
-            <div class="buttons">
-                <a href="openlayers.html" class="btn">Carte OpenLayers</a>
-                <a href="leaflet.html" class="btn">Carte Leaflet</a>
-            </div>
-        </section>
-    </main>
+    <!-- Contextualisation -->
+    <section class="context">
+        <div class="context-text">
+            <p>
+            Dans un monde en constante mutation, où les crises politiques, économiques et climatiques redéfinissent les marchés, l’agriculture émerge comme un secteur stratégique pour des investissements durables et rentables. 
+            AreaINVEST Analytics vous permet d’anticiper les tendances mondiales et de détecter les hotspots agricoles avant vos concurrents.
+            </p>
+        </div>
+        <div class="context-image">
+            <img src="./img/bourseInvestAgri.png" alt="Investissement agricole">
+        </div>
+    </section>
+
+    <!-- Cartes -->
+    <section id="maps" class="maps-overview">
+        <div class="map-card">
+            <h3>👨‍🌾 AgriTrendMap</h3>
+            <p>Deals par années et superficies investies.</p>
+            <a href="openlayers.html" class="btn">Explorer AgriTrendMap</a>
+        </div>
+        <div class="map-card">
+            <h3>🌾 CropFocusMap</h3>
+            <p>Types de cultures & Agriculture Orientation Index.</p>
+            <a href="leaflet.html" class="btn">Explorer CropFocusMap</a>
+        </div>
+    </section>
+
+    <!-- Régions -->
+    <section class="regions">
+        <div class="region">
+            <h4>🌎 Amérique Latine</h4>
+            <p>Le soja domine ! Les fuits prennent une place de plus en plus importante.</p>
+        </div>
+        <div class="region">
+            <h4>🌍 Afrique</h4>
+            <p>Café & canne à sucre en fort développement.</p>
+        </div>
+        <div class="region">
+            <h4>🌏 Asie</h4>
+            <p>Diversification vers fruits, l'huile de palme et autres cultures spécialisées.</p>
+        </div>
+    </section>
+
+    <!-- Chiffres clés -->
+    <section class="stats">
+        <div class="stat"><span>600+</span><p>Deals analysés</p></div>
+        <div class="stat"><span>60+</span><p>Pays couverts</p></div>
+        <div class="stat"><span>15+</span><p>Cultures stratégiques</p></div>
+    </section>
+
+    <!-- Final -->
+    <section class="final">
+        <h3>Prêt à investir avec intelligence avec Fanny Fortin et Elias Makhlouf ?</h3>
+        <a href="#maps" class="btn">Voir les cartes →</a>
+    </section>
+
+</main>
+
 
     <footer>
         <p>&copy; 2026 AreaINVEST Analytics. Tous droits réservés.</p>

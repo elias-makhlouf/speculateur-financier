@@ -1,6 +1,4 @@
-/* ============================= */
-/* BASE                          */
-/* ============================= */
+/* BASE */
 html, body {
     margin: 0;
     padding: 0;
@@ -10,10 +8,8 @@ html, body {
 }
 h1,h2,h3,h4 { margin:0; font-weight:600; }
 p { line-height:1.6; }
-
-/* ============================= */
-/* HEADER                        */
-/* ============================= */
+ 
+/* HEADER */
 header {
     background: linear-gradient(135deg, #2a9d8f, #21867a);
     color:white;
@@ -24,9 +20,22 @@ header {
 header h1 { font-size:2.5em; margin-bottom:12px; }
 header p { max-width:900px; margin:0 auto; font-size:1.1em; opacity:0.95; }
 
-/* ============================= */
-/* MAIN / CARTE                  */
-/* ============================= */
+/* INTRODUCTION*/
+.map-intro {
+    background: #fdfdfd;
+    padding: 20px 25px;
+    border-radius: 10px;
+    margin: 20px;
+    text-align: justify;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.map-intro p {
+    font-size: 1.1em;
+    color: #264653;
+}
+
+/* MAIN & CARTE */
 main {
     max-width:1400px;
     margin:40px auto;
@@ -44,9 +53,7 @@ main {
     overflow:hidden;
 }
 
-/* ============================= */
-/* BOUTON RETOUR                  */
-/* ============================= */
+/* BOUTON RETOUR */
 #backToMenu {
     position:absolute;
     top:20px;
@@ -69,9 +76,7 @@ main {
     border-color:#e76f51;
 }
 
-/* ============================= */
-/* LÉGENDES                       */
-/* ============================= */
+/* LÉGENDES */
 .legend {
     background:white;
     padding:18px 20px;
@@ -84,11 +89,13 @@ main {
     line-height:1.6;
     max-width: 160px;
 }
+
 .legend h4 {
     margin-bottom:10px;
     color:#264653;
     font-size:1.2em;
 }
+
 .legend .swatch, .legend span {
     display:inline-block;
     width:18px;
@@ -114,7 +121,6 @@ main {
     font-style: italic;
 }
 
-
 /* Position légendes */
 #legendOAI { bottom:300px; left:50px; }
 #legendDeals { bottom:50px; left:50px; }
@@ -131,7 +137,6 @@ main {
 .legend span.oai-med { background:#f1b6da; }
 .legend span.oai-low { background:#d01c8b; }
 
-/* ============================= */
 /* BOUTON RÉINITIALISER DANS LEGENDES */
 #resetFilters {
     display:block;
@@ -151,8 +156,11 @@ main {
     background:#2a9d8f;
 }
 
-/* ============================= */
-/* POPUPS                         */
-/* ============================= */
+/* POPUPS*/
 .leaflet-popup-content-wrapper { border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.15); }
 .leaflet-popup-content { font-size:0.95em; line-height:1.5; }
+
+/* FOOTER */
+footer {background:#264653; color:white; text-align:center; padding:25px 20px; font-size:0.95em;}
+footer p {margin:0; opacity:0.9;color: white;}
+

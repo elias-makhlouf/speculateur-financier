@@ -2,26 +2,31 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>AgriInvest Analytics – Analyse Leaflet</title>
+    <title>CropFocusMap</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Leaflet -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-    
-    <!-- CSS projet -->
+    <link rel="icon" type="image/png" href="/img/icon.png">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>    
     <link rel="stylesheet" href="leaflet.css">
 </head>
 
 <body>
 
 <header>
-    <button id="backToMenu" title="Retour au menu">⬅ Menu</button>
-    <h1>Analyse des investissements agricoles mondiaux</h1>
+    <button id="backToMenu" title="Retour à l'accueil">⬅ Accueil</button>
+    <h1>CropFocusMap</h1>
+</header> 
+
+<section class="map-intro">
     <p>
-        Visualisation des flux d’investissement agricole à l’échelle mondiale.
-        Les cercles représentent les projets individuels : leur couleur indique le type de culture.
+        <strong>CropFocusMap</strong> offre une vision stratégique des secteurs agricoles par pays, en combinant les deals de la  Land Matrix et l’« Agriculture Orientation Index » (AOI). Cet indice mesure l’engagement budgétaire des gouvernements envers l’agriculture par rapport au poids économique du secteur, fournissant un indicateur clé pour évaluer le soutien public et la priorité accordée à chaque pays. Les données ont été trouvées sur la <a href="https://landmatrix.org" target="_blank" class="data-source">Land Matrix</a> et sur le site de l'<a href="https://landmatrix.org" target="_blank" class="data-source">Organisation des Nations Unies pour l’alimentation et l’agriculture (FAO)</a>
     </p>
-</header>
+    <p>
+        Sur la carte, les types de cultures — huile de palme, soja, canne à sucre et autres — sont représentés par des cercles . L’AOI moyen pour 2015‑2025 fournit un signal sur la priorité gouvernementale accordée au secteur agricole. Un AOI élevé traduit un engagement fort : investir dans les cultures dominantes du pays est alors particulièrement intéressant, car elles bénéficient d’un environnement politique favorable et présentent un potentiel de croissance stratégique. Un AOI modéré indique un soutien limité : les cultures sont présentes mais moins soutenues, offrant des opportunités de diversification ou de niches à exploiter. Enfin, un AOI faible reflète un soutien restreint et un risque accru, mais peut révéler des secteurs émergents ou spécialisés à surveiller pour des investissements ciblés.
+    </p>
+    <p>
+        En combinant la lecture des cercles (taille et localisation des deals) avec l’AOI, vous pouvez identifier rapidement les cultures les plus performantes et prioriser vos décisions d’investissement en fonction de l’environnement politique et économique de chaque pays.
+    </p>
+</section>
 
 <main>
     <div id="map"></div>
@@ -49,9 +54,14 @@
 
 <!-- Scripts -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="paysOAI.js"></script>
-<script src="deals_leaflet.js"></script>
+<script src="leafletPaysOAI.js"></script>
+<script src="leafletDeal.js"></script>
 <script src="leaflet.js"></script>
 
 </body>
+
+<footer>
+        <p>&copy; 2026 AreaINVEST Analytics. Tous droits réservés.</p>
+</footer>
+
 </html>
