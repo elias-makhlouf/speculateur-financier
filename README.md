@@ -47,7 +47,9 @@ Pour démarrer tous les conteneurs :
 
 ```bash
 docker compose up -d
+npm run start
 ```
+
 Pour arrêter les conteneurs :
 
 ```bash
