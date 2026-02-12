@@ -10,90 +10,98 @@
 </head>
 
 <body>
-
-    <!-- ===================== -->
-    <!-- En-tête -->
-    <!-- ===================== -->
     <header>
+        <button id="backToMenu" title="Retour au menu">⬅ Menu</button>
         <h1>Analyse des investissements agricoles mondiaux</h1>
         <p>
             Cette carte propose une lecture macro-économique des investissements agricoles,
             afin d’identifier les pays concentrant les plus grandes surfaces investies
             et les dynamiques récentes du marché.
         </p>
-    </header>
-
-    <!-- ===================== -->
-    <!-- Contenu principal -->
-    <!-- ===================== -->
+    </header>  
     <main>
-
-        <h2>Plateforme d’analyse cartographique</h2>
-
-        <div class="map-layout">
+        <div class="map"></div>
+            <div class="map-layout">
 
             <!-- Panneau de contrôle -->
             <aside id="controls">
-
                 <section>
                     <h3>Fonds de carte</h3>
-                    <label>
-                        <input type="radio" name="basemap" id="baseOSM" checked>
-                        OpenStreetMap
-                    </label>
-                    <label>
-                        <input type="radio" name="basemap" id="baseESRI">
-                        Satellite (ESRI)
-                    </label>
+                    <label><input type="radio" name="basemap" id="baseOSM" checked>OpenStreetMap</label>
+                    <label><input type="radio" name="basemap" id="baseESRI">Satellite (ESRI)</label>
                 </section>
 
                 <section>
                     <h3>Couches</h3>
-                    <label>
-                        <input type="checkbox">
-                        Deals par pays (WMS)
-                    </label>
-                    <label>
-                        <input type="checkbox">
-                        Deals individuels (WFS)
-                    </label>
+                    <label><input type="checkbox" id="toggleWMS" checked>Deals par pays (WMS)</label>
+                    <label><input type="checkbox" id="toggleWFS" checked>Deals individuels (WFS)</label>
                 </section>
 
                 <section>
-                    <h3>Filtrer par année : <span id="yearValue">2015</span></h3>
-                    <input
-                        type="range"
-                        id="yearSlider"
-                        min="2015"
-                        max="2023"
-                        step="1"
-                        value="2015"
-                    >
+                    <h3>Filtrer par année : <span id="yearValue">Aucune sélection</span></h3>
+                    <div class="slider-container">
+                        <input type="range" id="yearSlider" min="2015" max="2025" step="1" value="2015">
+                        <button id="resetYear" title="Réinitialiser">⟲</button>
+                    </div>
                 </section>
 
-                <section id="legend">
-                    <h3>Légende</h3>
-                    <p>
-                        <span class="legend-circle"></span>
-                        Deal agricole (taille proportionnelle à la surface)
-                    </p>
-                    <p>
-                        Polygones : total des surfaces investies par pays
-                    </p>
+                <section>
+                    <h3>Filtrer par continent</h3>
+                    <div class="continent-buttons">
+                        <button data-continent="Americas">Amérique latine</button>
+                        <button data-continent="Africa">Afrique</button>
+                        <button data-continent="Asia">Asie</button>
+                        <button data-continent="Europe">Europe de l'est</button>
+                        <button data-continent="World">Monde</button>
+                    </div>
                 </section>
 
+                <section id="attributes">
+                    <h3>Deals sélectionnés</h3>
+                    <div id="attributesContent"><p>Sélectionnez un deal sur la carte</p></div>
+                </section>
             </aside>
 
             <!-- Carte -->
-            <div id="map"></div>
+            <div id="map">
+                <!-- Graphique overlay -->              
+                <canvas id="continentChart" width="230" height="150"></canvas>
+                
+                <!-- Légende DANS la carte -->
+                <section id="legend">
+                    <h3>Légende</h3>
+                    <span><img id="legendWMS" alt="Légende WMS">Surfaces investies par pays</span>
+                    <h4 id="dynamicCircleTitle">Deals agricoles (surface)</h4>
+                    <div class="legend-item">
+                        <div id="dynamicCircle" class="circle"></div>
+                        <span id="dynamicLabel">–</span>
+                    </div>
+                </section>
 
-        </div>
+                <!-- Bouton conseil -->
+                <button id="tipButton" title="Conseil d'investisseur">💡</button>
+
+                <!-- Panel conseil -->
+                <div id="tipPanel">
+                    <div id="tipContent">
+                        <h4>💡 Conseil d'investisseur</h4>
+                        <p id="tipText">Sélectionnez un continent pour voir un conseil.</p>
+                    </div>
+                    <button id="closeTip">✖</button>
+                </div>
+
+
+
+
+            </div>
+
 
     </main>
 
     <!-- ===================== -->
     <!-- Script OpenLayers -->
     <!-- ===================== -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="./openlayers.js"></script>
 
 </body>

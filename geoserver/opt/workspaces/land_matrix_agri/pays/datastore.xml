@@ -1,0 +1,21 @@
+<dataStore>
+  <id>DataStoreInfoImpl-24787e33:19c443956c7:-3fbf</id>
+  <name>pays</name>
+  <type>GeoPackage</type>
+  <enabled>true</enabled>
+  <workspace>
+    <id>WorkspaceInfoImpl-24787e33:19c443956c7:-7ffc</id>
+  </workspace>
+  <connectionParameters>
+    <entry key="fetch size">1000</entry>
+    <entry key="Expose primary keys">false</entry>
+    <entry key="Batch insert size">1</entry>
+    <entry key="database">file:data/pays.gpkg</entry>
+    <entry key="read_only">false</entry>
+    <entry key="dbtype">geopkg</entry>
+    <entry key="namespace">land_matrix_agri</entry>
+  </connectionParameters>
+  <__default>false</__default>
+  <dateCreated>2026-02-11 23:32:40.688 UTC</dateCreated>
+  <disableOnConnFailure>false</disableOnConnFailure>
+</dataStore>

@@ -1,13 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Using OpenLayers with Vite</title>
-  </head>
-  <body>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>AgriInvest Analytics – Analyse Leaflet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    
+    <!-- CSS projet -->
+    <link rel="stylesheet" href="leaflet.css">
+</head>
+
+<body>
+
+<header>
+    <button id="backToMenu" title="Retour au menu">⬅ Menu</button>
+    <h1>Analyse des investissements agricoles mondiaux</h1>
+    <p>
+        Visualisation des flux d’investissement agricole à l’échelle mondiale.
+        Les cercles représentent les projets individuels : leur couleur indique le type de culture.
+    </p>
+</header>
+
+<main>
     <div id="map"></div>
-    <script type="module" src="./main.js"></script>
-  </body>
+
+    <!-- Légende OAI -->
+    <div id="legendOAI" class="legend">
+        <h4>Indice OAI</h4>
+        <div><span class="oai-high"></span> > 1.5</div>
+        <div><span class="oai-medhigh"></span> 1 – 1.5</div>
+        <div><span class="oai-med"></span> 0.5 – 1</div>
+        <div><span class="oai-low"></span> 0 – 0.5</div>
+    </div>
+
+    <!-- Légende Investissements agricoles -->
+    <div id="legendDeals" class="legend">
+        <h4>Secteurs agricoles</h4>
+        <p class="explication">Cliquez sur un marqueur pour l’afficher ou le masquer</p>
+        <div><span class="swatch oilpalm"></span> Huile de palme</div>
+        <div><span class="swatch soy"></span> Soja</div>
+        <div><span class="swatch sugarcane"></span> Canne à sucre</div>
+        <div><span class="swatch other"></span> Autres cultures</div>
+        <button id="resetFilters" style="margin-top:6px;">Réinitialiser</button>
+    </div>
+</main>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="paysOAI.js"></script>
+<script src="deals_leaflet.js"></script>
+<script src="leaflet.js"></script>
+
+</body>
 </html>
