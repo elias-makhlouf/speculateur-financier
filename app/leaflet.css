@@ -76,6 +76,8 @@ main {
     border-color:#e76f51;
 }
 
+#resetFiltersstyle {margin-top:6px;}
+
 /* LÉGENDES */
 .legend {
     background:white;
