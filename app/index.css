@@ -29,7 +29,7 @@ header p {max-width:800px; margin:0 auto; font-size:1em; opacity:0.9;}
 .map-card p {margin-bottom:15px;}
 
 /* REGIONS */
-.regions {display:flex; flex-wrap:wrap; justify-content:center; gap:20px; padding:50px 20px; background:#ffffff;}
+.regions {display:flex; align-items: stretch;flex-wrap:wrap; justify-content:center; gap:20px; padding:50px 20px; background:#ffffff;}
 .region {flex:1 1 250px; text-align:center; padding:20px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.05);}
 .region h4 {margin-bottom:10px; color:#e76f51;}
 
