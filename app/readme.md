@@ -8,7 +8,7 @@ To get started, run the following (requires Node 14+):
 
 Then change into your new `my-app` directory and start a development server (available at http://localhost:5173):
 
-    cd my-app
+    cd app
     npm start
 
 To generate a build ready for production:
